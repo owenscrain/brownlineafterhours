@@ -1,9 +1,5 @@
-import AfterHoursClock from "../components/after-hours-clock";
+import AfterHoursSign from "../components/after-hours-sign";
 
 export default function HomePage() {
-  return (
-    <main className="after-hours-sign" aria-label="Brown Line after-hours display">
-      <AfterHoursClock />
-    </main>
-  );
+  return <AfterHoursSign />;
 }
