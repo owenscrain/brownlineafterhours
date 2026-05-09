@@ -11,7 +11,7 @@ function formatCurrentTime(date: Date): string {
 }
 
 export default function AfterHoursClock() {
-  const [now, setNow] = useState(() => new Date());
+  const [now, setNow] = useState<Date | null>(null);
 
   useEffect(() => {
     const updateTime = () => setNow(new Date());
@@ -23,8 +23,8 @@ export default function AfterHoursClock() {
   }, []);
 
   return (
-    <time className="after-hours-sign__clock" dateTime={now.toISOString()} suppressHydrationWarning>
-      {formatCurrentTime(now)}
+    <time className="after-hours-sign__clock" dateTime={now?.toISOString()}>
+      {now ? formatCurrentTime(now) : ""}
     </time>
   );
 }
